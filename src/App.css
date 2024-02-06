@@ -1,0 +1,72 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.logo {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.welcome {
+  min-width: 400px;
+}
+.generalText {
+	font-style: normal;
+	line-height: normal;
+	color: #FFFFFF;
+  padding-bottom: 10px; 
+}
+.link {
+	font-style: normal;
+	color: #FFFFFF;
+}
+.link2 {
+  display: flex;
+	font-weight: bold;
+	color: #9999CC;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+
+.linkContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.link2_hidden {
+	font-style: normal;
+	font-weight: bold;
+	color: #333333;
+	text-decoration: none;
+	
+}
+.link3 {
+	font-style: normal;
+	font-weight: bold;
+	color: #CCCCCC;
+	text-decoration: none;
+}
+.portfolioNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
