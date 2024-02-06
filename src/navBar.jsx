@@ -9,7 +9,7 @@ const groups = [
     {name: "lamps", text: "Mood Lamps"}
   ];
 const renderLink = (name, text) =>
-  <button value={`${name}`} key={name} className="link2">{text}</button>;
+  <button value={`${name}`} key={name} id={name} className="link2">{text}</button>;
 const renderLinks =
   (links) => links.map(({name, text}) => renderLink(name, text));
 

@@ -31,7 +31,7 @@ import s3 from './assets/series2024/cp_landscape_2024_3.jpg';
 console.log('s3', s3);
 const pages = {
 	series2024: {
-		title: 'Land and Sea 2024',
+		title: 'Seascapes 2024',
 		pieces: [s1, s2, s3],
 	},
 	pencil: {
