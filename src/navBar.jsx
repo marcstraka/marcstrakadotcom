@@ -1,5 +1,6 @@
 const groups = [
 	{name: "home", text: "Home"},
+  {name: "series2024", text: "Seascapes 2024"},
     {name: "pencil", text: "Pencil"},
     {name: "color_pencil", text: "Color Pencil"},
     {name: "painting", text: "Painting"},

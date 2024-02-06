@@ -1,5 +1,6 @@
 import { string } from 'prop-types';
 import { useEffect, useState } from 'react';
+import { location$ } from './observer';
 import p1 from './assets/pencil/dining_room.jpg';
 import p2 from './assets/pencil/lostcoast.jpg';
 import p3 from './assets/pencil/make_art_straka.jpg';
@@ -24,7 +25,15 @@ import mx4 from './assets/mixed_media/colman_mesh_sitting.jpg';
 import mx5 from './assets/mixed_media/suzie96.jpg';
 import l1 from './assets/lamps/sconce1.jpg';
 import l2 from './assets/lamps/sconce2.jpg';
+import s1 from './assets/series2024/cp_landscape_2024_1.jpg';
+import s2 from './assets/series2024/cp_landscape_2024_2.jpg';
+import s3 from './assets/series2024/cp_landscape_2024_3.jpg';
+console.log('s3', s3);
 const pages = {
+	series2024: {
+		title: 'Land and Sea 2024',
+		pieces: [s1, s2, s3],
+	},
 	pencil: {
 		title: 'Pencil',
 		pieces: [p1, p2, p3, p4, p5, p6],
@@ -33,6 +42,10 @@ const pages = {
 		title: 'Color pencil',
 		pieces: [cp1, cp2, cp3, cp4],
 	},
+	painting: {
+		title: 'Painting',
+		pieces: [pa1, pa2, pa3],
+	},
 	pastel: {
 		title: 'Pastel',
 		pieces: [ps1, ps2, ps3, ps4],
@@ -40,10 +53,6 @@ const pages = {
 	mixed_media: {
 		title: 'Mixed media',
 		pieces: [mx1, mx2, mx3, mx4, mx5],
-	},
-	painting: {
-		title: 'Painting',
-		pieces: [pa1, pa2, pa3],
 	},
 	lamps: {
 		title: 'Mood lamps',
@@ -54,34 +63,56 @@ const pages = {
 
 const PortfolioPage = (props) => {
 	const {page} = props;
-	const thisPage = pages[page];
+	const [pageKey, setPageKey] = useState(page);
+	const thisPage = pages[pageKey];
 	const [pageNum, setPageNum] = useState(1);
 	const goNext = () => pageNum < thisPage?.pieces?.length && setPageNum(pageNum + 1);
 	const goPrev = () => pageNum > 1 && setPageNum(pageNum - 1);
 	const fileName = thisPage?.pieces[pageNum - 1];
+	const sections = Object.keys(pages);
+	const thisSection = sections.findIndex(section => section === pageKey);
+	const nextSection = thisSection === sections.length - 1 ? 0 : thisSection + 1;
+	const prevSection = thisSection === 0 ? Number(sections.length) - 1 : thisSection -1;
+	const goNextSection = () => {
+		console.log('nextSection', nextSection);
+		location$.next(sections[nextSection]);
+		setPageKey(sections[nextSection]);
+		setPageNum(1);
+	};
+	const goPrevSection = () => {
+		console.log('prevSection', prevSection);
+		location$.next(sections[prevSection]);
+		setPageKey(sections[prevSection]);
+		setPageNum(1);
+	};
 
 	useEffect(() => {
 		setPageNum(1);
+		setPageKey(page);
 	}, [page]);
 
 	return <>
 	<div className='portfolioNav'>
-		<div className='link2'>
-		{`${thisPage.title}`}
+		<div className='portfoliSide'>
 		</div>
 		<div>
 			{pageNum > 1 && <button onClick={goPrev}>previous</button>}
+			{pageNum === 1 &&
+				<button onClick={goPrevSection} value={`${sections[nextSection]}`}>previous</button>}
 		</div>
 		<div>
 			{pageNum} of  {`${thisPage?.pieces?.length}`}
 		</div>
 		<div>
 			{pageNum < thisPage?.pieces?.length && <button onClick={goNext}>next</button>}
+			{pageNum === thisPage?.pieces?.length &&
+				<button onClick={goNextSection} value={`${sections[nextSection]}`}>next</button>}
 		</div>
+		<div className='portfoliSide'></div>
 	</div>
 
 	<div>
-	<img src={fileName} width="650" />
+	<img src={fileName} width="800" />
 	</div>
 	</>;
 }

@@ -70,3 +70,6 @@
   flex-direction: row;
   justify-content: space-between;
 }
+.portforlioSide {
+  width: 130px;
+}
