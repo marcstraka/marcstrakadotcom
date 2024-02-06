@@ -8,7 +8,7 @@ import './App.css'
 const sections = ['home', 'series2024', 'pencil', 'color_pencil', 'painting', 'pastel', 'mixed_media', 'lamps'];
 
 function App() {
-  setTimeout(() => observer(), 500);
+  setTimeout(() => observer(), 300);
   const [page, setPage] = useState('home');
   location$.subscribe({
 		next: (id) => {
