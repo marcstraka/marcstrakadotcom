@@ -7,6 +7,7 @@ import p3 from './assets/pencil/make_art_straka.jpg';
 import p4 from './assets/pencil/redrockpark.jpg';
 import p5 from './assets/pencil/skeleton.jpg';
 import p6 from './assets/pencil/sun_flower.jpg';
+import p7 from './assets/pencil/sf_drawing.jpg';
 import cp1 from './assets/color_pencil/artist_in_mirror.jpg';
 import cp2 from './assets/color_pencil/bottle_brush_flower.jpg';
 import cp3 from './assets/color_pencil/self_portrait.jpg';
@@ -36,7 +37,7 @@ const pages = {
 	},
 	pencil: {
 		title: 'Pencil',
-		pieces: [p1, p2, p3, p4, p5, p6],
+		pieces: [p1, p2, p3, p4, p5, p6, p7],
 	},
 	color_pencil: {
 		title: 'Color pencil',
@@ -93,26 +94,27 @@ const PortfolioPage = (props) => {
 
 	return <>
 	<div className='portfolioNav'>
-		<div className='portfoliSide'>
-		</div>
-		<div>
-			{pageNum > 1 && <button onClick={goPrev}>previous</button>}
+		<div className='prev'>
+			{pageNum > 1 && <button className="portNav" onClick={goPrev}>previous</button>}
 			{pageNum === 1 &&
-				<button onClick={goPrevSection} value={`${sections[nextSection]}`}>previous</button>}
+				<button className="portNav" onClick={goPrevSection} value={`${sections[nextSection]}`}>previous</button>}
 		</div>
 		<div>
 			{pageNum} of  {`${thisPage?.pieces?.length}`}
 		</div>
 		<div>
-			{pageNum < thisPage?.pieces?.length && <button onClick={goNext}>next</button>}
+			{pageNum < thisPage?.pieces?.length && <button className="portNav" onClick={goNext}>next</button>}
 			{pageNum === thisPage?.pieces?.length &&
-				<button onClick={goNextSection} value={`${sections[nextSection]}`}>next</button>}
+				<button className="portNav" onClick={goNextSection} value={`${sections[nextSection]}`}>next</button>}
 		</div>
-		<div className='portfoliSide'></div>
 	</div>
-
-	<div>
-	<img src={fileName} width="800" />
+	<div className='pieceHolder'>
+	<div className='pieceInfo'>
+		View From Tank Hill, 2004, 8.5 x 11 inches, color pencil on paper
+	</div>
+		<div>
+			<img src={fileName} className="pieceHolder" width="600" />
+		</div>
 	</div>
 	</>;
 }

@@ -27,7 +27,7 @@
   margin-top: 20px;
 }
 .welcome {
-  min-width: 400px;
+  width: 528px;
 }
 .generalText {
 	font-style: normal;
@@ -36,33 +36,44 @@
   padding-bottom: 10px; 
 }
 .link2 {
-  display: flex;
 	font-weight: bold;
 	color: #9999CC;
   margin-right: 1em;
   margin-bottom: 1em;
+  font-size: 14px;
 }
-
 button.link2active {
-  display: flex;
 	font-weight: bold;
 	color: #9999CC;
   margin-right: 1em;
   margin-bottom: 1em;
+  font-size: 14px;
   border: 3px solid aqua;
+}
+.portNav {
+  font-size: 14px;
 }
 
 .linkContainer {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 .portfolioNav {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
-.portforlioSide {
-  width: 130px;
+.pieceHolder {
+  display: flex;
+  flex-direction: column;
+}
+.pieceHolder img {
+  margin-left: 1em;
+  margin-top: 1em;
+  margin: 0 auto;
+}
+.pieceInfo {
+  padding: 1em;
+  margin: 0 auto;
 }

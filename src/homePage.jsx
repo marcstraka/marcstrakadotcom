@@ -1,17 +1,21 @@
 import welcome from './assets/welcome.jpg';
+import { location$ } from './observer';
+
+const handleClick = () => {
+	location$.next('series2024');
+}
 
 const homePage = <>
-<div>
+<div onClick={handleClick}>
 <img src={welcome} className="logo" alt="Welcome to Marc Straka dot com" />
 </div>
 <div className="welcome">
 <div className="generalText">
-	Art works created by Marc Straka.
+	Art works created by Marc Straka. Click anywhere to view them.
 </div>
-<div className='generalText'>Media include pencil, colored pencil, oil paint, pastel,
-	and mixed media collage.
-</div>
-<div className="generalText">Sconces or mood lamps created using wire and acrylic resin.</div>
+<div> </div>
+<div className='generalText'>Media include pencil, colored pencil, oil paint, acrylic paint, pastel,
+	and mixed media collage. Mood lamps created using wire and acrylic resin.</div>
 <div className="generalText">Commissions accepted.
 </div>
 </div>
