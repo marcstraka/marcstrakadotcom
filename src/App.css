@@ -77,3 +77,82 @@ button.link2active {
   padding: 1em;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 400px) {
+  img {
+    width: 80%;
+  }
+  .welcome {
+    width: 80%;
+  }
+  .link2 {
+    font-weight: bold;
+    color: #9999CC;
+    margin-right: 0.3em;
+    margin-bottom: 0.3em;
+    font-size: 11px;
+  }
+  button.link2active {
+    font-weight: bold;
+    color: #9999CC;
+    margin-right: 0.3em;
+    margin-bottom: 0.3em;
+    font-size: 11px;
+    border: 1px solid aqua;
+  }
+  button {
+    border-radius: 4px;
+    border: 1px solid transparent;
+    padding: 0.3em;
+    font-size: 0.5em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  img {
+    width: 80%;
+  }
+  .welcome {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  img {
+    width: 84%;
+  }
+  .welcome {
+    width: 93%;
+  }
+  .link2 {
+    font-weight: bold;
+    color: #9999CC;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 12px;
+  }
+  button.link2active {
+    font-weight: bold;
+    color: #9999CC;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 12px;
+    border: 2px solid aqua;
+  }
+  button {
+    border-radius: 4px;
+    border: 1px solid transparent;
+    padding: 0.3em;
+    font-size: 0.5em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+}
