@@ -138,6 +138,7 @@ const PortfolioPage = (props) => {
 		setPageKey(sections[prevSection]);
 		setPageNum(1);
 	};
+	const renderImage = (f, w) => <img src={f} className="pieceHolder" width={w} />;
 
 	useEffect(() => {
 		setPageNum(1);
@@ -165,7 +166,7 @@ const PortfolioPage = (props) => {
 		{info}
 	</div>
 		<div>
-			<img src={fileName} className="pieceHolder" width={width} />
+			{renderImage(fileName, width)}
 		</div>
 	</div>
 	</>;
